@@ -1,0 +1,44 @@
+{
+  "name": "openopenrouter",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Self-hostable, OpenRouter-compatible LLM gateway on Cloudflare Workers",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "catalog:sync": "node scripts/sync-catalog.ts",
+    "db:migrate:local": "wrangler d1 migrations apply openopenrouter --local",
+    "db:migrate:remote": "wrangler d1 migrations apply openopenrouter --remote",
+    "deploy": "pnpm run build && wrangler d1 migrations apply openopenrouter --remote && wrangler deploy",
+    "hexclave:push": "hexclave config push --config-file ./hexclave.config.ts",
+    "admin:grant": "node scripts/grant-credits.ts"
+  },
+  "dependencies": {
+    "@hexclave/react": "1.0.133",
+    "hono": "4.13.13",
+    "jose": "6.2.13",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router": "8.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261023.1",
+    "@hexclave/cli": "1.0.133",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5",
+    "wrangler": "4.152.0"
+  }
+}

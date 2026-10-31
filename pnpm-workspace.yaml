@@ -1,0 +1,23 @@
+# Supply-chain protections. These apply to everyone who installs this repo,
+# regardless of their global pnpm config.
+
+# Refuse package versions published less than 7 days ago (in minutes). Most
+# malicious releases are caught and unpublished within that window.
+minimumReleaseAge: 10080
+minimumReleaseAgeStrict: true
+
+# Fail if a package that previously had trusted publishing / provenance loses it.
+trustPolicy: no-downgrade
+
+# Transitive dependencies may not pull from git URLs or tarballs.
+blockExoticSubdeps: true
+
+# Never run install scripts except for the explicitly allowed packages below.
+strictDepBuilds: true
+allowBuilds:
+  esbuild: true
+  workerd: true
+  sharp: false
+
+# Pin exact versions and require the lockfile in CI.
+saveExact: true
