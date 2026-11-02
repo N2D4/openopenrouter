@@ -31,7 +31,7 @@ export function Docs() {
         <code>https://openrouter.ai/api/v1</code> to <code>{__PUBLIC_URL__}/api/v1</code> and using a {__SITE_NAME__} API key.
       </p>
 
-      <h2>Quickstart</h2>
+      <h2 id="quickstart">Quickstart</h2>
       <ol className="muted">
         <li>
           Create an API key on the <Link to="/settings/keys">Keys</Link> page.
@@ -43,7 +43,7 @@ export function Docs() {
       </ol>
       <CodeTabs tabs={snippets("openai/gpt-5.5")} />
 
-      <h2>Claude Code and the Anthropic SDK</h2>
+      <h2 id="claude-code">Claude Code and the Anthropic SDK</h2>
       <p className="muted">
         The <code>/api/v1/messages</code> endpoint speaks the Anthropic Messages API for every model, including OpenAI models. Anthropic models are
         passed through natively, including prompt caching, thinking and beta headers.
@@ -52,7 +52,7 @@ export function Docs() {
         <code>{CLAUDE_CODE}</code>
       </pre>
 
-      <h2>Model routing</h2>
+      <h2 id="routing">Model routing</h2>
       <p className="muted">
         Model IDs follow OpenRouter: <code>anthropic/claude-sonnet-5.5</code>, <code>openai/gpt-5.5</code>, and so on. Provider-native IDs such as{" "}
         <code>claude-sonnet-4-5-20250929</code> or <code>gpt-4o</code> are accepted too. Pass <code>models: [...]</code> for fallbacks: if the first
@@ -68,7 +68,7 @@ export function Docs() {
         working with Claude.
       </p>
 
-      <h2>Usage and cost</h2>
+      <h2 id="usage">Usage and cost</h2>
       <p className="muted">
         Every response includes <code>usage</code> with token counts and <code>cost</code> in USD. Look up any request later with{" "}
         <code>GET /api/v1/generation?id=gen-…</code>. Streaming responses end with a usage chunk before <code>[DONE]</code>.
@@ -81,7 +81,7 @@ export function Docs() {
         <code>POST /api/v1/auth/keys {"{ code, code_verifier }"}</code>.
       </p>
 
-      <h2>Endpoints</h2>
+      <h2 id="endpoints">Endpoints</h2>
       <div className="card table-wrap">
         <table>
           <tbody>
@@ -103,7 +103,7 @@ export function Docs() {
         error).
       </p>
 
-      <h2>Self-hosting</h2>
+      <h2 id="self-hosting">Self-hosting</h2>
       <p className="muted">
         {__SITE_NAME__} runs on Cloudflare Workers + D1, with Hexclave for sign-in, emails and payments. Clone{" "}
         <a href="https://github.com/N2D4/openopenrouter">the repository</a> and follow the README to deploy your own instance with your own provider

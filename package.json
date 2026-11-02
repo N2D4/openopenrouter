@@ -22,6 +22,7 @@
     "admin:grant": "node scripts/grant-credits.ts"
   },
   "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "5.3.0",
     "@hexclave/react": "1.0.133",
     "hono": "4.13.13",
     "jose": "6.2.13",

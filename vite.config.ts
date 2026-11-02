@@ -42,5 +42,5 @@ export default defineConfig({
     __PUBLIC_URL__: JSON.stringify(vars.PUBLIC_URL),
   },
   build: { outDir: "../../dist/client", emptyOutDir: true, sourcemap: false, chunkSizeWarningLimit: 2000 },
-  server: { proxy: { "/api": "http://localhost:8787" } },
+  server: { proxy: { "/api/": "http://localhost:8787" } },
 });

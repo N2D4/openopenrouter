@@ -166,6 +166,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/plus-jakarta-sans':
+        specifier: 5.3.0
+        version: 5.3.0
       '@hexclave/react':
         specifier: 1.0.133
         version: 1.0.133(@standard-schema/spec@1.1.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(ajv@8.20.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(tailwindcss@4.3.3)(zod@4.6.7)
@@ -630,6 +633,9 @@ packages:
 
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
+
+  '@fontsource-variable/plus-jakarta-sans@5.3.0':
+    resolution: {integrity: sha512-/l/4r0yyWK9JzAlmA0LiYgGgmJe/Gswt4jTJEzr5QhJfwMbvJZDmYWyW0M4X7yCK69BajMVlV/Lx8g7WDc1+sw==}
 
   '@hexclave/cli@1.0.133':
     resolution: {integrity: sha512-0vDc1/Y7usiXFsaOwEc/k9CEKUBgD8lndKM5quxT7Np+wfoNa1dFcTo2RPZKdCtUWgULpNVoiVGRYDIQteqMPA==}
@@ -3831,6 +3837,8 @@ snapshots:
       react-dom: 19.3.1(react@19.3.1)
 
   '@floating-ui/utils@0.2.12': {}
+
+  '@fontsource-variable/plus-jakarta-sans@5.3.0': {}
 
   '@hexclave/cli@1.0.133(@opentelemetry/core@2.12.0(@opentelemetry/api@1.10.0))(@standard-schema/spec@1.1.0)(@types/node@26.6.5)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(ajv@8.20.0)(react-dom@19.3.1(react@19.3.1))(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(react@19.3.1)(supports-color@10.2.2)(yup@1.7.1)(zod@4.6.7)':
     dependencies:

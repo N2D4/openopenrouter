@@ -40,6 +40,12 @@ export const usd = (n: number, digits = 2) =>
 /** Per-token USD price string → "$x / 1M tokens" number. */
 export const perMillion = (p: string | undefined) => (p == null ? null : Number(p) * 1_000_000);
 
+/** Per-token USD price string → "$2.50" per million tokens. */
+export const money = (p: string | undefined) => {
+  const v = perMillion(p);
+  return v == null ? "–" : `$${v.toLocaleString("en-US", { minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 3 })}`;
+};
+
 export const fmtInt = (n: number) => n.toLocaleString("en-US");
 
 export function timeAgo(iso: string | null) {
@@ -50,3 +56,21 @@ export function timeAgo(iso: string | null) {
   if (s < 86400) return `${Math.floor(s / 3600)}h ago`;
   return `${Math.floor(s / 86400)}d ago`;
 }
+
+let modelsPromise: Promise<any[]> | undefined;
+/** The public model list, fetched once per page load and shared by the nav search, landing page and model pages. */
+export function loadModels(): Promise<any[]> {
+  modelsPromise ??= publicApi<{ data: any[] }>("/models").then(
+    (r) => r.data,
+    (e) => {
+      modelsPromise = undefined;
+      throw e;
+    },
+  );
+  return modelsPromise;
+}
+
+/** "OpenAI: GPT-6.1 Sol" → "GPT-6.1 Sol" */
+export const shortName = (name: string) => name.replace(/^[^:]+:\s*/, "");
+
+export const REPO_URL = "https://github.com/N2D4/openopenrouter";
