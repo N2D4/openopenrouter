@@ -2,7 +2,7 @@
 
 # OpenOpenRouter
 
-An open, self-hostable LLM gateway with an **OpenRouter-compatible API**. One API key, every OpenAI and Anthropic model, provider prices passed through. Change your base URL and keep your code.
+**OpenRouter, but open source.** The same API, model IDs and prices, as a gateway you can self-host on Cloudflare. Use the hosted instance or run your own; either way, migrating is one changed base URL.
 
 Hosted instance: **https://openopenrouter.ai**
 
