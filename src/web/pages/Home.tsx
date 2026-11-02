@@ -105,9 +105,9 @@ export function Home() {
           MIT licensed · Self-hostable · Star on GitHub <ArrowRight size={13} />
         </a>
         <h1>
-          OpenRouter,
+          Actually open
           <br />
-          but Open Source
+          OpenRouter
         </h1>
         <p className="hero-sub">
           The same API, model IDs and prices. Use our hosted instance, or run your own.
